@@ -4,7 +4,7 @@ session_start();
 // Database connection parameters
 $dsn = "mysql:host=localhost;dbname=cars";
 $username = "root";
-$password = "root";
+$password = "";
 
 try {
     // Attempt to connect to the database
@@ -13,8 +13,8 @@ try {
     // Set PDO attributes (error mode)
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Fetching users example (you might not need this part here)
-    $sql = "SELECT * FROM user";
+    // Fetching cars example (you might not need this part here)
+    $sql = "SELECT * FROM car";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 } catch (PDOException $e) {
