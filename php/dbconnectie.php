@@ -2,9 +2,9 @@
 session_start();
 
 // Database connection parameters
-$dsn = "mysql:host=localhost;dbname=cars";
+$dsn = "mysql:host=localhost;dbname=carzilla";
 $username = "root";
-$password = "";
+$password = "root";
 
 try {
     // Attempt to connect to the database
