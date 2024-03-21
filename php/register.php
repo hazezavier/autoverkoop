@@ -1,30 +1,33 @@
 <head>
-<link rel="stylesheet" href="loginStyle.css">
 <title>Register</title>
 </head>
 
-    <form method="post" action="procregister.php">
+    <body>
 
-        <label for="name">USERNAME</label>
-        <br>
-        <input type="text" name="username" size="20">
+        <form method="post" action="procregister.php">
 
-        <br>
-        <br>
+            <label for="name">USERNAME</label>
+            <br>
+            <input type="text" name="username" size="20">
 
-        <label for="password">PASSWORD</label>
-        <br>
-        <input type="password" name="password" size="20">
+            <br>
+            <br>
 
-        <br>
-        <br>
+            <label for="password">PASSWORD</label>
+            <br>
+            <input type="password" name="password" size="20">
 
-        <label for="email">EMAIL</label>
-        <br>
-        <input type="email" name="email" size="20">
+            <br>
+            <br>
 
-        <br>
-        <br>
+            <label for="email">EMAIL</label>
+            <br>
+            <input type="email" name="email" size="20">
 
-        <input type="submit" value="REGISTER" name="btnsubmit">
-    </form>
+            <br>
+            <br>
+
+            <input type="submit" value="REGISTER" name="btnsubmit">
+        </form>
+
+    </body>
