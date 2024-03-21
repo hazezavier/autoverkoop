@@ -12,9 +12,9 @@
         <br>
         <br>
 
-        <label for="password_hash">PASSWORD</label>
+        <label for="password">PASSWORD</label>
         <br>
-        <input type="text" name="password_hash" size="20">
+        <input type="password" name="password" size="20">
 
         <br>
         <br>

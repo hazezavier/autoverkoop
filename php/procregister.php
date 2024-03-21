@@ -16,6 +16,5 @@ if(isset($_POST["username"])){
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
-    header("location:login.php?msg=toegevoegd aan de database");
 }
 
