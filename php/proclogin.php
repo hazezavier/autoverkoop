@@ -2,6 +2,9 @@
 session_start();
 
 include("dbconnectie.php");
+require_once 'auth.php';
+
+requireNotLoggedIn();
 
 // Get form input
 $usernameInput = $_POST['username'];
@@ -24,7 +27,6 @@ try {
     // Verify password
     if ($user && password_verify($passwordInput, $user['password'])) {
         // Password is correct, set session variables
-        $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
         
         // Redirect to a different page

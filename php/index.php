@@ -1,5 +1,9 @@
 <?php
+require_once 'auth.php';
 include("dbconnectie.php");
+include("header.php");
+
+requireLogin();
 ?>
 
 <!DOCTYPE html>

@@ -1,3 +1,9 @@
+<?php
+require_once 'auth.php';
+
+requireNotLoggedIn();
+
+?>
 <head>
 <title>Login</title>
 </head>
