@@ -1,41 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Shop</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <header>
-        <h1>Car Shop</h1> <!-- header -->
-    </header>
-
-    <div id="car-list"> <!-- #car-list -->
-        <!-- Car listings will be dynamically added here -->
-        <?php
-        include("dbconnectie.php");
-        $sql = "SELECT * FROM car";
-        $stmt = $conn->query($sql);
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<div class="car">'; // .car
-            echo '<img src="images/' . $row['image'] . '" alt="' . $row['name'] . '">'; // .car img
-            echo '<div class="car-info">'; // .car-info
-            echo '<h2>' . $row['name'] . '</h2>'; // .car h2
-            echo '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>'; // .car p
-            echo '<button onclick="buyCar(\'' . $row['name'] . '\')">Buy Now</button>'; // .car button
-            echo '</div>'; // car-info
-            echo '</div>'; // car
-        }
-        ?>
-    </div>
-
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> Car Shop</p> <!-- footer -->
-    </footer>
-</body>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+  <nav class="navbar bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Carzilla</a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>  
+  </body>
 </html>

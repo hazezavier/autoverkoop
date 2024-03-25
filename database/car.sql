@@ -28,10 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `car` (
-  `id` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `description` varchar(250) NOT NULL,
-  `price` int(11) NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `price` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
