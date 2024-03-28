@@ -1,20 +1,32 @@
 <?php
 
-// Database connection parameters
-$dsn = "mysql:host=localhost;dbname=carzilla";
-$username = "root";
-$password = "root";
+class Database {
+    public $connection;
+    public function __construct($config)
+    {
+        $dsn = 'mysql:' . http_build_query($config, '', ';');
 
-try {
-    // Attempt to connect to the database
-    $conn = new PDO($dsn, $username, $password);
+        // $dsn = "mysql:host={$config['host']};dbname={$config['dbname']}";
 
-    // Set PDO attributes (error mode)
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-} catch (PDOException $e) {
-    // If connection fails, display error message
-    echo "Connection failed: " . $e->getMessage();
-    die(); // Terminate script execution
+        $this->connection = new PDO($dsn, 'root', 'root', [
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        ]);
+    }
+
+
+
+    public function query($query)
+    {
+        $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+        $statement = $this->connection->prepare($query);
+        $statement->execute();
+
+        return $statement;
+    }
 }
+
+// $db = new Database();
+
+
 ?>

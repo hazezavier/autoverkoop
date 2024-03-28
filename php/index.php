@@ -1,9 +1,15 @@
 <?php
 require_once 'auth.php';
-include("dbconnectie.php");
+require("dbconnectie.php");
 include("header.php");
 
 requireLogin();
+
+$config = require('config.php');
+
+$db = new Database($config);
+
+// requireLogin();
 ?>
 
 <!DOCTYPE html>
@@ -26,16 +32,33 @@ requireLogin();
         <!-- Car listings will be dynamically added here -->
         <?php
             // Fetch car listings from the database
-            $sql = "SELECT * FROM car";
-            $stmt = $conn->query($sql);
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo '<div class="car">';
-                echo '<img src="images/' . $row['image'] . '" alt="' . $row['name'] . '">';
-                echo '<h2>' . $row['name'] . '</h2>';
-                echo '<p>Price: ' . $row['price'] . '</p>';
-                echo '<button onclick="buyCar(\'' . $row['name'] . '\')">Buy Now</button>';
-                echo '</div>';
-            }
+            // $sql = "SELECT * FROM car";
+            // $stmt = $conn->query($sql);
+            // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            //     echo '<div class="car">';
+            //     echo '<img src="images/' . $row['image'] . '" alt="' . $row['name'] . '">';
+            //     echo '<h2>' . $row['name'] . '</h2>';
+            //     echo '<p>Price: ' . $row['price'] . '</p>';
+            //     echo '<button onclick="buyCar(\'' . $row['name'] . '\')">Buy Now</button>';
+            //     echo '</div>';
+            // }
+
+
+
+
+
+
+
+
+            //fetch/fetchAll???
+
+            //$db = new Database();
+
+            // $users = $db->query("select * from customer")->fetchAll();
+
+            // foreach ($users as $user) {
+            //     echo "<li>" . $user['password'] . "</li>";
+            // }
         ?>
     </div>
 
