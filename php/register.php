@@ -1,5 +1,5 @@
 <?php
-require 'dbconnectie.php';
+require 'classes/dbconnectie.php';
 require_once 'auth.php';
 
 requireNotLoggedIn();
@@ -19,7 +19,7 @@ if(isset($_POST["username"])){
 
         $db = new Database($config);
 
-        $query = "INSERT INTO customer (username, password, email) VALUES (:un, :pw, :em)";
+        $query = "INSERT INTO user (username, password, email) VALUES (:un, :pw, :em)";
         $statement = $db->connection->prepare($query);
         $statement->execute(array(":un" => $username, ":pw" => $hashed_password, ":em" => $email));
 
