@@ -1,6 +1,6 @@
 <?php
 
-require "dbconnectie.php";
+require "classes/dbconnectie.php";
 require_once 'auth.php';
 
 requireNotLoggedIn();
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $db = new Database($config);
 
-        $query = "SELECT * FROM customer WHERE username = :username";
+        $query = "SELECT * FROM user WHERE username = :username";
         $statement = $db->connection->prepare($query);
         $statement->bindParam(':username', $usernameInput);
         $statement->execute();
