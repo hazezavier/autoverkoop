@@ -30,36 +30,8 @@ $db = new Database($config);
 
     <div id="car-list">
         <?php
-
-            //fetch/fetchAll???
-
-            //$db = new Database();
-
-            // $users = $db->query("select * from customer")->fetchAll();
-
-            // foreach ($users as $user) {
-            //     echo "<li>" . $user['password'] . "</li>";
-            // }
-
-
-            
-            // Create a new Car object from the database
             $carId = 1;
-            // $car = Car::fromDatabase($db, $carId);
-            $car = Car::fromDatabase($db, 'car', $carId, ['name', 'color', 'price', 'doors']);
-
-
-            // Now you can access the properties of the car object
-            // echo "Car details:<br>";
-            // echo "Name: " . $car->name . "<br>";
-            // echo "Color: " . $car->color . "<br>";
-            // echo "Price: €" . $car->price . "<br>";
-            // echo "Doors: " . $car->doors . "<br>";
-
-
-            // works with destruct
-            // $audiS3 = new Car("Audi S3", "red", "15000", "4");
-            // $bmwE36 = new Car("BMW", "purple", "5000", "2");
+            $car = Car::fromDatabase($db, $carId);
         ?>
     </div>
 
