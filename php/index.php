@@ -33,12 +33,13 @@ $db = new Database($config);
     <div id="car-list">
         <?php
             $carId = 1;
-            $car = Car::fromDatabase($db, $carId);
+            $car = Car::allFromDatabase($db, $carId);
 
+            echo "<br>";
             echo "<br>";
 
             $bikeId = 1;
-            $bike = Bike::fromDatabase($db, $bikeId);
+            $bike = Bike::allFromDatabase($db, $bikeId);
         ?>
     </div>
 

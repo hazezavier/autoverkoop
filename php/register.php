@@ -16,7 +16,6 @@ if(isset($_POST["username"])){
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     try{
-
         $db = new Database($config);
 
         $query = "INSERT INTO user (username, password, email) VALUES (:un, :pw, :em)";
