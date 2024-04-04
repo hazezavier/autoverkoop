@@ -1,8 +1,10 @@
 <?php
 require_once 'auth.php';
-require("classes/dbconnectie.php");
 include("header.php");
+
+require("classes/dbconnectie.php");
 include("classes/car.php");
+include("classes/bike.php");
 
 requireLogin();
 
@@ -32,6 +34,11 @@ $db = new Database($config);
         <?php
             $carId = 1;
             $car = Car::fromDatabase($db, $carId);
+
+            echo "<br>";
+
+            $bikeId = 1;
+            $bike = Bike::fromDatabase($db, $bikeId);
         ?>
     </div>
 

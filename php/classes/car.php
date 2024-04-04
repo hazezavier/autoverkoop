@@ -1,15 +1,13 @@
 <?php
 
-include("classes/vehicle.php");
-
-
+require_once("classes/vehicle.php");
 
 class Car extends Vehicle {
     public $doors;
 
-    public function __construct($name, $color, $price, $doors)
+    public function __construct($brand, $model, $color, $price, $doors)
     {
-        parent::__construct($name, $color, $price);
+        parent::__construct($brand, $model, $color, $price);
         $this->doors = $doors;
     }
 
@@ -17,22 +15,25 @@ class Car extends Vehicle {
         $config = require('config.php');
         $db = new Database($config);
 
-        $query = "SELECT `name`, color, price, doors FROM car WHERE id = :id";
+        $query = "SELECT brand, model, color, price, doors FROM car WHERE id = :id";
         $statement = $db->connection->prepare($query);
         $statement->bindParam(':id', $carId);
         $statement->execute();
 
         $carData = $statement->fetch(PDO::FETCH_ASSOC);
 
-            echo $carData['name'];
+            echo $carData['brand'];
+            echo "<br>";
+            echo $carData['model'];
             echo "<br>";
             echo $carData['color'];
             echo "<br>";
             echo $carData['price'];
             echo "<br>";
             echo $carData['doors'];
+            echo "<br>";
 
-        return new self($carData['name'], $carData['color'], $carData['price'], $carData['doors']);
+        return new self($carData['brand'], $carData['model'], $carData['color'], $carData['price'], $carData['doors']);
     }
 }
 ?>

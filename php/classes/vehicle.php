@@ -5,9 +5,10 @@ class Vehicle {
     public $color;
     public $price;
 
-    public function __construct($name, $color, $price)
+    public function __construct($brand, $model, $color, $price)
     {
-        $this->name = $name;
+        $this->name = $brand;
+        $this->name = $model;
         $this->color = $color;
         $this->price = $price;
     }
