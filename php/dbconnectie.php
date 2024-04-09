@@ -3,7 +3,7 @@
 // Database connection parameters
 $dsn = "mysql:host=localhost;dbname=carzilla";
 $username = "root";
-$password = "root";
+$password = "";
 
 try {
     // Attempt to connect to the database
