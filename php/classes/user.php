@@ -1,14 +1,18 @@
 <?php
 
 class User {
+    public $id;
     public $username;
-    public $password;
     public $email;
-    public function __construct($username, $password, $email)
+    public function __construct($id, $username, $email)
     {
+        $this->id = $id;
         $this->username = $username;
-        $this->password = $password;
         $this->email = $email;
+    }
+
+    public function getId() {
+        return $this->id;
     }
 
 }

@@ -19,36 +19,35 @@ class Car extends Vehicle {
         $statement = $db->connection->prepare($query);
         $statement->bindParam(':id', $carId);
         $statement->execute();
-
         $carData = $statement->fetch(PDO::FETCH_ASSOC);
 
-            echo $carData['brand'];
+            echo "Brand: " . $carData['brand'];
             echo "<br>";
-            echo $carData['model'];
+            echo "Model: " . $carData['model'];
             echo "<br>";
-            echo $carData['color'];
+            echo "Color: " . $carData['color'];
             echo "<br>";
-            echo $carData['price'];
+            echo "Price: €" . $carData['price'] . ",-";
             echo "<br>";
-            echo $carData['doors'];
+            echo "Doors: " . $carData['doors'];
             echo "<br>";
-            echo $carData['transmission'];
+            echo "Transmission: " . $carData['transmission'];
             echo "<br>";
-            echo $carData['horsepower'];
+            echo "Horsepower: " . $carData['horsepower'];
             echo "<br>";
-            echo $carData['kilometers'];
+            echo "Kilometers: " . $carData['kilometers'];
             echo "<br>";
-            echo $carData['state'];
+            echo "State: " . $carData['state'];
             echo "<br>";
-            echo $carData['body_type'];
+            echo "Body type: " . $carData['body_type'];
             echo "<br>";
-            echo $carData['fuel'];
+            echo "Fuel type: " . $carData['fuel'];
             echo "<br>";
-            echo $carData['registration_date'];
+            echo "Registration date: " . $carData['registration_date'];
             echo "<br>";
-            echo $carData['weight'];
+            echo "Weight: " . $carData['weight'] . "kg";
             echo "<br>";
-            echo $carData['license_plate'];
+            echo "License plate: " . $carData['license_plate'];
 
             //update car
             // UPDATE car

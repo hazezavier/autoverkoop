@@ -32,6 +32,22 @@ $db = new Database($config);
 
     <div id="car-list">
         <?php
+            echo "hello user " . $_SESSION['username'];
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
+            echo "<br>";
+        ?>
+        <form method="post" action="process_purchase.php">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="username" value="<?php echo $username; ?>">
+            <input type="hidden" name="email" value="<?php echo $email; ?>">
+            <input type="hidden" name="car_id" value="<?php echo $carId; ?>">
+            <button type="submit" name="buy_car">Buy Car</button>
+        </form>
+        <?php
+
             $carId = 1;
             $car = Car::allFromDatabase($db, $carId);
 

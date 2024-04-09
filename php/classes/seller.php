@@ -3,9 +3,9 @@
 require_once("classes/user.php");
 
 class Seller extends User {
-    public function __construct($username, $password, $email)
+    public function __construct($id, $username, $password, $email)
     {
-        parent::__construct($username, $password, $email);
+        parent::__construct($id, $username, $password, $email);
     }
 
     public function sell()

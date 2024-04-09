@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('Location: index.php');
             exit();
         } else {
-            echo "Invalid username or password. <a href='login.php'>Try again</a>";
+            echo "Invalid username or password";
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
