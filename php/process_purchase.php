@@ -4,7 +4,9 @@
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['buy_car'])) {
-        // Assume $db is your PDO database connection object
+        $config = require('config.php');
+        $db = new Database($config);
+        // var_dump($_POST);
         $carId = $_POST['car_id'];
         $id = $_POST['id'];
         $username = $_POST['username'];

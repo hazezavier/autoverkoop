@@ -11,7 +11,7 @@ class Car extends Vehicle {
         $this->doors = $doors;
     }
 
-    public static function allFromDatabase($db, $carId) {
+    public static function allCarInfo($db, $carId) {
         $config = require('config.php');
         $db = new Database($config);
 
@@ -69,6 +69,104 @@ class Car extends Vehicle {
             $carData['registration_date'], 
             $carData['weight'], 
             $carData['license_plate']);
+    }
+
+    public static function shortCarInfo($db, $carId) {
+        $config = require('config.php');
+        $db = new Database($config);
+
+        $query = "SELECT * FROM car WHERE id = :id";
+        $statement = $db->connection->prepare($query);
+        $statement->bindParam(':id', $carId);
+        $statement->execute();
+        $carData = $statement->fetch(PDO::FETCH_ASSOC);
+
+            echo "Brand: " . $carData['brand'];
+            echo " ";
+            echo "Model: " . $carData['model'];
+            echo " ";
+            echo "Price: €" . $carData['price'] . ",-";
+            echo " ";
+            echo "Doors: " . $carData['doors'];
+            echo " ";
+            echo "Transmission: " . $carData['transmission'];
+
+            return new self(
+                $carData['brand'], 
+                $carData['model'], 
+                $carData['color'], 
+                $carData['price'], 
+                $carData['doors'], 
+                $carData['transmission'], 
+                $carData['horsepower'], 
+                $carData['kilometers'], 
+                $carData['state'], 
+                $carData['body_type'], 
+                $carData['fuel'], 
+                $carData['registration_date'], 
+                $carData['weight'], 
+                $carData['license_plate']);
+
+    }
+
+    public static function brandCarInfo($db, $carId) {
+        $config = require('config.php');
+        $db = new Database($config);
+
+        $query = "SELECT * FROM car WHERE id = :id";
+        $statement = $db->connection->prepare($query);
+        $statement->bindParam(':id', $carId);
+        $statement->execute();
+        $carData = $statement->fetch(PDO::FETCH_ASSOC);
+
+        echo $carData['brand'];
+
+            return new self(
+                $carData['brand'], 
+                $carData['model'], 
+                $carData['color'], 
+                $carData['price'], 
+                $carData['doors'], 
+                $carData['transmission'], 
+                $carData['horsepower'], 
+                $carData['kilometers'], 
+                $carData['state'], 
+                $carData['body_type'], 
+                $carData['fuel'], 
+                $carData['registration_date'], 
+                $carData['weight'], 
+                $carData['license_plate']);
+
+    }
+
+    public static function priceCarInfo($db, $carId) {
+        $config = require('config.php');
+        $db = new Database($config);
+
+        $query = "SELECT * FROM car WHERE id = :id";
+        $statement = $db->connection->prepare($query);
+        $statement->bindParam(':id', $carId);
+        $statement->execute();
+        $carData = $statement->fetch(PDO::FETCH_ASSOC);
+
+        echo $carData['price'];
+
+            return new self(
+                $carData['brand'], 
+                $carData['model'], 
+                $carData['color'], 
+                $carData['price'], 
+                $carData['doors'], 
+                $carData['transmission'], 
+                $carData['horsepower'], 
+                $carData['kilometers'], 
+                $carData['state'], 
+                $carData['body_type'], 
+                $carData['fuel'], 
+                $carData['registration_date'], 
+                $carData['weight'], 
+                $carData['license_plate']);
+
     }
 }
 ?>

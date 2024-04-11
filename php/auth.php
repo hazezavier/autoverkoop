@@ -1,7 +1,7 @@
 <?php
 function isUserLoggedIn() {
     session_start();
-    return isset($_SESSION['username']);
+    return isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['email']);
 }
 
 function requireLogin() {
