@@ -77,14 +77,13 @@ $db = new Database($config);
     </style>
 </head>
 
-<<<<<<< HEAD
 <body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
 
 <nav class="navbar navbar-expand-lg navbar-light container-fluid py-3">
     <div class="container">
         <a class="navbar-brand" href="index.html">
             <img src="http://localhost/CARZILLA/autoverkoop/images/maxresdefault.jpg" alt="logo" class="img-fluid" style="max-height: 80px;">
-=======
+
 
 <body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
 
