@@ -28,3 +28,7 @@ class Image {
     }
 }
 
+// syntax to get an image
+// $t = new Image();
+// $t->getImage($db, 1);
+

@@ -4,7 +4,7 @@ require_once 'auth.php';
 require("classes/dbconnectie.php");
 include("classes/car.php");
 include("classes/bike.php");
-include("image.php");
+include("classes/image.php");
 
 requireLogin();
 
@@ -52,6 +52,13 @@ $db = new Database($config);
     opacity: 0.7;
 }
 
+    .boba{
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        height: Auto;
+    }
+
 
     </style>
 </head>
@@ -62,7 +69,7 @@ $db = new Database($config);
 <nav class="navbar navbar-expand-lg navbar-light container-fluid py-3">
     <div class="container">
         <a class="navbar-brand" href="index.php">
-            <img src="../images/maxresdefault.jpg" alt="logo" class="img-fluid" style="max-height: 80px;">
+            <img src="../images/logo.png" alt="logo" class="img-fluid" style="max-height: 80px;">
         </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
@@ -92,6 +99,13 @@ $db = new Database($config);
                         <li class="nav-item me-2 mb-3">
                             <a class="nav-link px-4" href="logout.php">Logout</a>
                         </li>
+                        <li class="nav-item me-2 mb-3">
+                            <?php
+                                // echo $_SESSION['username'];
+                                // echo $_SESSION['id'];
+                                // echo $_SESSION['email'];
+                            ?>
+                        </li>
 
                     </ul>
 
@@ -113,10 +127,7 @@ $db = new Database($config);
         </div>
     </nav>
 
-    <!-- <?php
-    $t = new Image();
-    $t->getImage($db, 1);
-    ?> -->
+   
 
     <!-- hero section start  -->
    <section id="hero" class="position-relative overflow-hidden">
@@ -252,30 +263,50 @@ $db = new Database($config);
         <h2 class="text-center my-5">NEWEST <span class="text-primary">Arrival</span></h2>
 
         <!-- Swiper -->
-        <div class="swiper-container" style="height: 400px; overflow: hidden;">
+        <div class="swiper-container" style="height: 750px; overflow: hidden;">
             <div class="swiper-wrapper">
 
                 <!-- First Slide -->
                 <div class="swiper-slide noSwiping">
                     <div class="card">
-                        <img src="../images/car1.png" class="card-img-top img-fluid smaller-image" alt="BMW x3">
+                        <div class="boba">
+                            <?php 
+                                $t = new Image();
+                                $t->getImage($db, 1);
+                            ?>
+                        </div>
+                        <!-- <img src="../images/car1.png" class="card-img-top img-fluid smaller-image" alt="BMW x3"> -->
                         <div class="card-body p-4">
-                            <h4 class="card-title">BMW x3</h4>
+                            <h4 class="card-title">
+                                <?php 
+                                    $car = Car::brandCarInfo($db, 1);
+                                ?>
+                            </h4>
                             <div class="card-text">
                                 <ul class="d-flex list-unstyled">
-                                    <li class="rental-list">Sports</li>
-                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
-                                    <li class="rental-list">Auto</li>
-                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
-                                    <li class="rental-list">4 Passengers</li>
-                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
-                                    <li class="rental-list display-small">Diesel</li>
+                                <?php
+                                    $car = Car::shortCarInfo($db, 1);
+                                ?>
                                 </ul>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between">
-                                <h3 class="pt-2">$36,000 <span class="rental-price"></span></h3>
-                                <a href="#" class="btn btn-primary">buy now</a>
+                                <h3 class="pt-2">
+                                    <?php
+                                        echo "€";
+                                        $car = Car::priceCarInfo($db, 1);
+                                        echo ",-";
+                                    ?> 
+                                    <span class="rental-price"></span>
+                                </h3>
+                                <form method="post" action="process_purchase.php">
+                                    <input hidden name="id" value="<?php echo $_SESSION['id']; ?>">
+                                    <input hidden name="username" value="<?php echo $_SESSION['username']; ?>">
+                                    <input hidden name="email" value="<?php echo $_SESSION['email']; ?>">
+                                    <input hidden name="car_id" value="<?php echo 1; ?>">
+                                    
+                                    <button type="submit" name="buy_car">Buy Car</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -464,7 +495,7 @@ $db = new Database($config);
             <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
 
                 <div class=" col-md-4 mt-5 mt-md-0 ">
-                    <img src="../images/logo.png" alt="image">
+                    <img src="#" alt="image">
                     <p class="py-3">Vel non nibh vestibulum massa ullam corper bib endum ultrices venenatis, id id sed
                         mass.</p>
                     <div class="d-flex align-items-center ">
