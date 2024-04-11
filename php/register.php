@@ -1,3 +1,36 @@
+<<<<<<< HEAD
+=======
+<?php
+require 'classes/dbconnectie.php';
+require_once 'auth.php';
+
+requireNotLoggedIn();
+
+$config = require('config.php');
+
+
+if(isset($_POST["username"])){
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    try{
+        $db = new Database($config);
+
+        $query = "INSERT INTO user (username, password, email) VALUES (:un, :pw, :em)";
+        $statement = $db->connection->prepare($query);
+        $statement->execute(array(":un" => $username, ":pw" => $hashed_password, ":em" => $email));
+
+        header('Location: login.php');
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
+}
+?>
+>>>>>>> origin/master
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +50,11 @@
       <div class="col-12 col-md-6 col-xl-7">
         <div class="d-flex justify-content-center text-bg-primary">
           <div class="col-12 col-xl-9">
+<<<<<<< HEAD
             <img class="img-fluid rounded mb-4" loading="lazy" src="http://localhost/CARZILLA/autoverkoop/images/82ddb8c1cfd18ee8cee19536bf3084b0.jpg" width="245" height="80" alt="BootstrapBrain Logo">
+=======
+            <img class="img-fluid rounded mb-4" loading="lazy" src="../images/82ddb8c1cfd18ee8cee19536bf3084b0.jpg" width="245" height="80" alt="BootstrapBrain Logo">
+>>>>>>> origin/master
             <hr class="border-primary-subtle mb-4">
             <h2 class="h1 mb-4">Four door more wh*res</h2>
             <p class="lead mb-5">Roll with Carzilla – Where Every Whip Brings the Hype!</p>
@@ -40,23 +77,39 @@
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
             <form action="#!">
               <div class="row gy-3 overflow-hidden">
                 <div class="col-12">
                   <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+=======
+            <form method="post" action="">
+              <div class="row gy-3 overflow-hidden">
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="Username" required>
+>>>>>>> origin/master
                     <label for="username" class="form-label">Username</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
+<<<<<<< HEAD
                     <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+=======
+                    <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
+>>>>>>> origin/master
                     <label for="email" class="form-label">Email</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating mb-3">
+<<<<<<< HEAD
                     <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
+=======
+                    <input type="password" class="form-control" name="password" value="" placeholder="Password" required>
+>>>>>>> origin/master
                     <label for="password" class="form-label">Password</label>
                   </div>
                 </div>
@@ -70,7 +123,11 @@
                 </div>
                 <div class="col-12">
                   <div class="d-grid">
+<<<<<<< HEAD
                     <button class="btn btn-dark btn-lg" type="submit">Sign up</button>
+=======
+                    <button class="btn btn-dark btn-lg" value="REGISTER" name="btnsubmit" type="submit">Sign up</button>
+>>>>>>> origin/master
                   </div>
                 </div>
               </div>
@@ -90,4 +147,8 @@
 </section>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> origin/master

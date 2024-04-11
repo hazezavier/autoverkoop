@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+=======
+<?php
+require_once 'auth.php';
+
+require("classes/dbconnectie.php");
+include("classes/car.php");
+include("classes/bike.php");
+include("image.php");
+
+requireLogin();
+
+$config = require('config.php');
+
+$db = new Database($config);
+
+?>
+>>>>>>> origin/master
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +26,7 @@
     <title>CARZILLA</title>
     
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="css/vendor.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -16,6 +35,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+=======
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+>>>>>>> origin/master
 
 
     <!-- script ================================================== -->
@@ -41,12 +70,22 @@
     </style>
 </head>
 
+<<<<<<< HEAD
 <body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
 
 <nav class="navbar navbar-expand-lg navbar-light container-fluid py-3">
     <div class="container">
         <a class="navbar-brand" href="index.html">
             <img src="http://localhost/CARZILLA/autoverkoop/images/maxresdefault.jpg" alt="logo" class="img-fluid" style="max-height: 80px;">
+=======
+
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+
+<nav class="navbar navbar-expand-lg navbar-light container-fluid py-3">
+    <div class="container">
+        <a class="navbar-brand" href="index.php">
+            <img src="../images/maxresdefault.jpg" alt="logo" class="img-fluid" style="max-height: 80px;">
+>>>>>>> origin/master
         </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
@@ -62,7 +101,11 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a class="nav-link active px-3" aria-current="page" href="#">Home</a>
+=======
+                            <a class="nav-link active px-3" aria-current="page" href="index.php">Home</a>
+>>>>>>> origin/master
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-3" href="#rental">Cars</a>
@@ -73,17 +116,32 @@
                         <li class="nav-item">
                             <a class="nav-link px-3" href="#action">Contact</a>
                         </li>
+<<<<<<< HEAD
 
                     </ul>
 
                     <div class="d-flex mt-5 mt-lg-0 ps-xl-5 align-items-center justify-content-center">
     <ul class="navbar-nav justify-content-end align-items-center">
+=======
+                        <li class="nav-item me-2 mb-3">
+                            <a class="nav-link px-4" href="logout.php">Logout</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- <div class="d-flex mt-5 mt-lg-0 ps-xl-5 align-items-center justify-content-center"> -->
+    <!-- <ul class="navbar-nav justify-content-end align-items-center">
+>>>>>>> origin/master
         <li class="nav-item">
             <a class="nav-link px-3" href="login.php">Login</a>
         </li>
     </ul>
     <button type="button" class="btn btn-outline-primary nav-button mx-3" data-bs-toggle="modal"
+<<<<<<< HEAD
         data-bs-target="#exampleModal2">Register</button>
+=======
+        data-bs-target="#exampleModal2">Register</button> -->
+>>>>>>> origin/master
 </div>
 
                         <!-- Modal -->
@@ -94,6 +152,14 @@
         </div>
     </nav>
 
+<<<<<<< HEAD
+=======
+    <!-- <?php
+    $t = new Image();
+    $t->getImage($db, 1);
+    ?> -->
+
+>>>>>>> origin/master
     <!-- hero section start  -->
    <section id="hero" class="position-relative overflow-hidden">
     <div class="container">
@@ -106,7 +172,11 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="position-absolute top-0 start-0 w-100 background-image" style="background-image: url('http://localhost/CARZILLA/autoverkoop/images/banner-img.jpg'); height: 200px;">
+=======
+    <div class="position-absolute top-0 start-0 w-100 background-image" style="background-image: url('../images/banner-img.jpg'); height: 200px;">
+>>>>>>> origin/master
     </div>
 </section>
 
@@ -182,6 +252,10 @@
             </div>
         </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     </section>
 
     <!-- process section start  -->
@@ -233,17 +307,29 @@
                 <!-- First Slide -->
                 <div class="swiper-slide noSwiping">
                     <div class="card">
+<<<<<<< HEAD
                         <img src="http://localhost/CARZILLA/autoverkoop/images/car1.png" class="card-img-top img-fluid smaller-image" alt="BMW x3">
+=======
+                        <img src="../images/car1.png" class="card-img-top img-fluid smaller-image" alt="BMW x3">
+>>>>>>> origin/master
                         <div class="card-body p-4">
                             <h4 class="card-title">BMW x3</h4>
                             <div class="card-text">
                                 <ul class="d-flex list-unstyled">
                                     <li class="rental-list">Sports</li>
+<<<<<<< HEAD
                                     <li class="rental-list"><img src="http://localhost/CARZILLA/autoverkoop/images/dot.png" class="px-3" alt="image"></li>
                                     <li class="rental-list">Auto</li>
                                     <li class="rental-list"><img src="http://localhost/CARZILLA/autoverkoop/images/dot.png" class="px-3" alt="image"></li>
                                     <li class="rental-list">4 Passengers</li>
                                     <li class="rental-list"><img src="http://localhost/CARZILLA/autoverkoop/images/dot.png" class="px-3" alt="image"></li>
+=======
+                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
+                                    <li class="rental-list">Auto</li>
+                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
+                                    <li class="rental-list">4 Passengers</li>
+                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
+>>>>>>> origin/master
                                     <li class="rental-list display-small">Diesel</li>
                                 </ul>
                             </div>
@@ -260,17 +346,29 @@
                 <!-- Additional Slides -->
                 <div class="swiper-slide noSwiping">
                     <div class="card">
+<<<<<<< HEAD
                         <img src="http://localhost/CARZILLA/autoverkoop/images/car2.png" class="card-img-top img-fluid smaller-image" alt="Mercedes-Benz">
+=======
+                        <img src="../images/car2.png" class="card-img-top img-fluid smaller-image" alt="Mercedes-Benz">
+>>>>>>> origin/master
                         <div class="card-body p-4">
                             <h4 class="card-title">Mercedes-Benz</h4>
                             <div class="card-text">
                                 <ul class="d-flex list-unstyled">
                                     <li class="rental-list">Sports</li>
+<<<<<<< HEAD
                                     <li class="rental-list"><img src="http://localhost/CARZILLA/autoverkoop/images/dot.png" class="px-3" alt="image"></li>
                                     <li class="rental-list">Auto</li>
                                     <li class="rental-list"><img src="http://localhost/CARZILLA/autoverkoop/images/dot.png" class="px-3" alt="image"></li>
                                     <li class="rental-list">4 Passengers</li>
                                     <li class="rental-list"><img src="http://localhost/CARZILLA/autoverkoop/images/dot.png" class="px-3" alt="image"></li>
+=======
+                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
+                                    <li class="rental-list">Auto</li>
+                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
+                                    <li class="rental-list">4 Passengers</li>
+                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
+>>>>>>> origin/master
                                     <li class="rental-list display-small">Diesel</li>
                                 </ul>
                             </div>
@@ -305,7 +403,11 @@
     <!-- testimonial section start  -->
     <section id="testimonial" class=" position-relative">
         <div class="pattern-overlay pattern-left position-absolute">
+<<<<<<< HEAD
             <img src="images/testimonial-pattern.png" alt="pattern">
+=======
+            <img src="../images/testimonial-pattern.png" alt="pattern">
+>>>>>>> origin/master
         </div>
         <div class="container my-5 py-5">
             <div class="swiper testimonial-swiper">
@@ -414,7 +516,11 @@
     <section id="action" class="position-relative">
 
         <div class="pattern-overlay pattern-right position-absolute">
+<<<<<<< HEAD
             <img src="images/call-to-action-pattern.png" alt="pattern">
+=======
+            <img src="../images/call-to-action-pattern.png" alt="pattern">
+>>>>>>> origin/master
         </div>
 
         <div class="container  py-5 my-5">
@@ -439,7 +545,11 @@
             <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
 
                 <div class=" col-md-4 mt-5 mt-md-0 ">
+<<<<<<< HEAD
                     <img src="images/logo.png" alt="image">
+=======
+                    <img src="../images/logo.png" alt="image">
+>>>>>>> origin/master
                     <p class="py-3">Vel non nibh vestibulum massa ullam corper bib endum ultrices venenatis, id id sed
                         mass.</p>
                     <div class="d-flex align-items-center ">

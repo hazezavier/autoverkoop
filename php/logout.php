@@ -1,6 +1,9 @@
 <?php
 session_start();
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 // Unset all session variables
 session_unset();
 

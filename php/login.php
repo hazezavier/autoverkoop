@@ -1,3 +1,44 @@
+<<<<<<< HEAD
+=======
+<?php
+
+require "classes/dbconnectie.php";
+require_once 'auth.php';
+
+requireNotLoggedIn();
+
+$config = require('config.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $usernameInput = $_POST['username'];
+    $passwordInput = $_POST['password'];
+
+
+    try {
+        $db = new Database($config);
+
+        $query = "SELECT * FROM user WHERE username = :username";
+        $statement = $db->connection->prepare($query);
+        $statement->bindParam(':username', $usernameInput);
+        $statement->execute();
+
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+
+        if ($user && password_verify($passwordInput, $user['password'])) {
+            $_SESSION['username'] = $usernameInput;
+            echo "test";
+            header('Location: index.php');
+            exit();
+        } else {
+            echo "Invalid username or password";
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+?>
+>>>>>>> origin/master
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,14 +59,22 @@
 
               <div class="col-md-6 col-lg-5 d-none d-md-block">
                 <div class="image-container" style="border-radius: 1rem 0 0 1rem; overflow: hidden;">
+<<<<<<< HEAD
                   <img src="http://localhost/CARZILLA/autoverkoop/images/login_jdm.jpg" alt="login form" class="img-fluid" style="width: 100%; height: auto;" />
+=======
+                  <img src="../images/login_jdm.png" alt="login form" class="img-fluid" style="width: 100%; height: auto;" />
+>>>>>>> origin/master
                 </div>
               </div>
 
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
+<<<<<<< HEAD
                 <form method="post" action="proclogin.php">
+=======
+                <form method="post" action="">
+>>>>>>> origin/master
 
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -35,7 +84,11 @@
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                   <div class="form-outline mb-4">
+<<<<<<< HEAD
                     <input type="email" id="form2Example17" class="form-control form-control-lg" name="username" required>
+=======
+                    <input type="text" id="form2Example17" class="form-control form-control-lg" name="username" required>
+>>>>>>> origin/master
                     <label class="form-label" for="form2Example17">Username</label>
                   </div>
 
@@ -45,7 +98,11 @@
                   </div>
 
                   <div class="pt-1 mb-4">
+<<<<<<< HEAD
                     <button class="btn btn-dark btn-lg btn-block" type="submit" name="btnsubmit">Login</button>
+=======
+                    <button class="btn btn-dark btn-lg btn-block" type="submit" value="LOGIN" name="btnsubmit">Login</button>
+>>>>>>> origin/master
                   </div>
 
                   <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="register.php" style="color: #393f81;">Register here</a></p>
@@ -69,4 +126,8 @@
 <!-- Bootstrap JS (Optional) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> origin/master
