@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php
 require_once 'auth.php';
 
@@ -15,7 +13,6 @@ $config = require('config.php');
 $db = new Database($config);
 
 ?>
->>>>>>> origin/master
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,16 +23,6 @@ $db = new Database($config);
     <title>CARZILLA</title>
     
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-<<<<<<< HEAD
-<link rel="stylesheet" type="text/css" href="css/vendor.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-=======
     <link rel="stylesheet" type="text/css" href="css/vendor.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -44,7 +31,6 @@ $db = new Database($config);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
->>>>>>> origin/master
 
 
     <!-- script ================================================== -->
@@ -73,17 +59,9 @@ $db = new Database($config);
         height: Auto;
     }
 
-
     </style>
+
 </head>
-
-<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
-
-<nav class="navbar navbar-expand-lg navbar-light container-fluid py-3">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="http://localhost/CARZILLA/autoverkoop/images/maxresdefault.jpg" alt="logo" class="img-fluid" style="max-height: 80px;">
-
 
 <body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
 
@@ -106,11 +84,7 @@ $db = new Database($config);
                 <div class="offcanvas-body">
                     <ul class="navbar-nav align-items-center justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-<<<<<<< HEAD
-                            <a class="nav-link active px-3" aria-current="page" href="#">Home</a>
-=======
                             <a class="nav-link active px-3" aria-current="page" href="index.php">Home</a>
->>>>>>> origin/master
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-3" href="#rental">Cars</a>
@@ -121,15 +95,10 @@ $db = new Database($config);
                         <li class="nav-item">
                             <a class="nav-link px-3" href="#action">Contact</a>
                         </li>
-<<<<<<< HEAD
+                        <li class="nav-item me-2 mb-3 ms-5">
+    <a class="nav-link px-3 py-2 text-white" href="logout.php" style="background-color: #dc3545; border: 1px solid #dc3545; border-radius: 5px; display: inline-block;">Logout</a>
+</li>
 
-                    </ul>
-
-                    <div class="d-flex mt-5 mt-lg-0 ps-xl-5 align-items-center justify-content-center">
-    <ul class="navbar-nav justify-content-end align-items-center">
-=======
-                        <li class="nav-item me-2 mb-3">
-                            <a class="nav-link px-4" href="logout.php">Logout</a>
                         </li>
                         <li class="nav-item me-2 mb-3">
                             <?php
@@ -141,19 +110,7 @@ $db = new Database($config);
 
                     </ul>
 
-                    <!-- <div class="d-flex mt-5 mt-lg-0 ps-xl-5 align-items-center justify-content-center"> -->
-    <!-- <ul class="navbar-nav justify-content-end align-items-center">
->>>>>>> origin/master
-        <li class="nav-item">
-            <a class="nav-link px-3" href="login.php">Login</a>
-        </li>
-    </ul>
-    <button type="button" class="btn btn-outline-primary nav-button mx-3" data-bs-toggle="modal"
-<<<<<<< HEAD
-        data-bs-target="#exampleModal2">Register</button>
-=======
-        data-bs-target="#exampleModal2">Register</button> -->
->>>>>>> origin/master
+   
 </div>
 
                         <!-- Modal -->
@@ -166,7 +123,7 @@ $db = new Database($config);
 
    
 
->>>>>>> origin/master
+
     <!-- hero section start  -->
    <section id="hero" class="position-relative overflow-hidden">
     <div class="container">
@@ -179,92 +136,131 @@ $db = new Database($config);
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-    <div class="position-absolute top-0 start-0 w-100 background-image" style="background-image: url('http://localhost/CARZILLA/autoverkoop/images/banner-img.jpg'); height: 200px;">
-=======
     <div class="position-absolute top-0 start-0 w-100 background-image" style="background-image: url('../images/banner-img.jpg'); height: 200px;">
->>>>>>> origin/master
     </div>
 </section>
 
 
+<!-- search section start -->
+<section id="search">
+    <div class="container search-block p-5">
+        <?php
+        // Database credentials
+        $hostname = 'localhost'; // Or your database host
+        $username = 'root';
+        $password = '';
+        $database = 'carzilla';
 
-    <!-- search section start  -->
-    <section id="search">
-        <div class="container search-block p-5">
+        // Create connection
+        $connection = mysqli_connect($hostname, $username, $password, $database);
 
-            <form class="row">
-                <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                    <label for="vehicle" class="label-style text-capitalize form-label">Vehicle type</label>
-                    <div class="input-group date ">
-                        <!-- <input type="text" class="form-control p-3 " id="vehicle" placeholder="Select Car Group" /> -->
-                        <select class="form-select form-control p-3" id="vehicle" aria-label="Default select example"
-                            style="background-image: none;">
-                            <option selected>Select Vehicle Type</option>
-                            <option value="1">BMW</option>
-                            <option value="2">Mercedes-Benz</option>
-                            <option value="3">Audi</option>
-                            <option value="4">Volkswagen</option>
-                            <option value="5">Tesla</option>
-                            <option value="6">Kawasaki</option>
-                            <option value="7">Ducati</option>
-                        </select>
-                        <span class="search-icon-position position-absolute p-3 ">
+        // Check connection
+        if (!$connection) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        // Retrieve data for dropdowns from the database
+        $queryBrands = "SELECT DISTINCT brand FROM car";
+        $resultBrands = mysqli_query($connection, $queryBrands);
+
+        $queryModels = "SELECT DISTINCT model FROM car";
+        $resultModels = mysqli_query($connection, $queryModels);
+
+        $queryYears = "SELECT DISTINCT YEAR(registration_date) AS year FROM car";
+        $resultYears = mysqli_query($connection, $queryYears);
+
+        $queryKilometers = "SELECT DISTINCT kilometers FROM car";
+        $resultKilometers = mysqli_query($connection, $queryKilometers);
+        ?>
+
+        <form class="row" method="post" action="handle_search.php">
+            <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
+                <label for="brand" class="label-style text-capitalize form-label">Brand</label>
+                <div class="input-group date">
+                    <select class="form-select form-control p-3" id="brand" name="brand" aria-label="Default select example" style="background-image: none;">
+                        <option selected>Select Brand</option>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($resultBrands)) {
+                            echo '<option value="' . $row['brand'] . '">' . $row['brand'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <span class="search-icon-position position-absolute p-3 ">
                             <iconify-icon class="search-icons" icon="solar:bus-outline"></iconify-icon>
                         </span>
-                    </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                    <label for="location" class="label-style text-capitalize form-label">location</label>
-                    <div class="input-group date">
-                        <input type="text" class="form-control p-3 position-relative" id="location"
-                            placeholder="Airport or anywhere" />
-                        <span class="search-icon-position position-absolute p-3 ">
-                            <iconify-icon class="search-icons" icon="solar:map-arrow-square-outline"></iconify-icon>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
+                <label for="model" class="label-style text-capitalize form-label">Model</label>
+                <div class="input-group date">
+                    <select class="form-select form-control p-3" id="model" name="model" aria-label="Default select example" style="background-image: none;">
+                        <option selected>Select Model</option>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($resultModels)) {
+                            echo '<option value="' . $row['model'] . '">' . $row['model'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <span class="search-icon-position position-absolute p-3 ">
+                            <iconify-icon class="search-icons" icon="solar:bus-outline"></iconify-icon>
                         </span>
-
-
-                    </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                    <label for="pick-up-date" class="label-style text-capitalize form-label">Build year</label>
-                    <div class="input-group date" id="datepicker1">
-                        <input type="text" class="form-control p-3" id="pick-up-date" />
+            </div>
 
-                        <span class="input-group-append">
+            <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
+                <label for="registration_date" class="label-style text-capitalize form-label">Build Year</label>
+                <div class="input-group date" id="datepicker1">
+                    <select class="form-select form-control p-3" id="registration_date" name="registration_date" aria-label="Default select example" style="background-image: none;">
+                        <option selected>Select Build Year</option>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($resultYears)) {
+                            echo '<option value="' . $row['year'] . '">' . $row['year'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <span class="input-group-append">
                             <span class="search-icon-position position-absolute p-3">
                                 <iconify-icon class="search-icons" icon="solar:calendar-broken"></iconify-icon>
                             </span>
                         </span>
-
-                    </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                    <label for="return-date" class="label-style text-capitalize form-label">Vehicle mileage</label>
-                    <div class="input-group date" id="datepicker2">
-                        <input type="text" class="form-control p-3" id="return-date" />
+            </div>
 
-                        <span class="input-group-append">
+            <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
+                <label for="kilometers" class="label-style text-capitalize form-label">Kilometers</label>
+                <div class="input-group date" id="datepicker2">
+                    <select class="form-select form-control p-3" id="kilometers" name="kilometers" aria-label="Default select example" style="background-image: none;">
+                        <option selected>Select Kilometers</option>
+                        <?php
+                        while ($row = mysqli_fetch_assoc($resultKilometers)) {
+                            echo '<option value="' . $row['kilometers'] . '">' . $row['kilometers'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                    <span class="input-group-append">
                             <span class="search-icon-position position-absolute p-3">
                                 <iconify-icon class="search-icons" icon="solar:calendar-broken"></iconify-icon>
                             </span>
                         </span>
-
-                    </div>
                 </div>
-            </form>
+            </div>
+
+            <!-- Add more form fields here -->
 
             <div class="d-grid gap-2 mt-4">
-                <button class="btn btn-primary " type="button">Find your vehicle</button>
+                <button class="btn btn-primary " type="submit">Find your vehicle</button>
             </div>
-        </div>
+        </form>
 
-<<<<<<< HEAD
-=======
+        <?php
+        // Close the database connection
+        mysqli_close($connection);
+        ?>
+    </div>
+</section>
 
->>>>>>> origin/master
-    </section>
-
+    
     <!-- process section start  -->
     <section id="process">
         <div class=" process-content container">
@@ -350,7 +346,7 @@ $db = new Database($config);
                                     <input hidden name="email" value="<?php echo $_SESSION['email']; ?>">
                                     <input hidden name="car_id" value="<?php echo 1; ?>">
                                     
-                                    <button type="submit" name="buy_car">Buy Car</button>
+                                    <button type="submit" name="buy_car" class="btn btn-primary">Buy Now</button>
                                 </form>
                             </div>
                         </div>
@@ -361,36 +357,44 @@ $db = new Database($config);
                 <!-- Additional Slides -->
                 <div class="swiper-slide noSwiping">
                     <div class="card">
-<<<<<<< HEAD
-                        <img src="http://localhost/CARZILLA/autoverkoop/images/car2.png" class="card-img-top img-fluid smaller-image" alt="Mercedes-Benz">
-=======
-                        <img src="../images/car2.png" class="card-img-top img-fluid smaller-image" alt="Mercedes-Benz">
->>>>>>> origin/master
+                        <div class="boba">
+                            <?php 
+                                $t = new Image();
+                                $t->getImage($db, 1);
+                            ?>
+                        </div>
+                    
                         <div class="card-body p-4">
-                            <h4 class="card-title">Mercedes-Benz</h4>
+                            <h4 class="card-title">
+                                <?php 
+                                    $car = Car::brandCarInfo($db, 1);
+                                ?>
+                            </h4>
                             <div class="card-text">
                                 <ul class="d-flex list-unstyled">
-                                    <li class="rental-list">Sports</li>
-<<<<<<< HEAD
-                                    <li class="rental-list"><img src="http://localhost/CARZILLA/autoverkoop/images/dot.png" class="px-3" alt="image"></li>
-                                    <li class="rental-list">Auto</li>
-                                    <li class="rental-list"><img src="http://localhost/CARZILLA/autoverkoop/images/dot.png" class="px-3" alt="image"></li>
-                                    <li class="rental-list">4 Passengers</li>
-                                    <li class="rental-list"><img src="http://localhost/CARZILLA/autoverkoop/images/dot.png" class="px-3" alt="image"></li>
-=======
-                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
-                                    <li class="rental-list">Auto</li>
-                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
-                                    <li class="rental-list">4 Passengers</li>
-                                    <li class="rental-list"><img src="../images/dot.png" class="px-3" alt="image"></li>
->>>>>>> origin/master
-                                    <li class="rental-list display-small">Diesel</li>
+                                <?php
+                                    $car = Car::shortCarInfo($db, 1);
+                                ?>
                                 </ul>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-between">
-                                <h3 class="pt-2">$36,000 <span class="rental-price"></span></h3>
-                                <a href="#" class="btn btn-primary">buy now</a>
+                                <h3 class="pt-2">
+                                    <?php
+                                        echo "€";
+                                        $car = Car::priceCarInfo($db, 1);
+                                        echo ",-";
+                                    ?> 
+                                    <span class="rental-price"></span>
+                                </h3>
+                                <form method="post" action="process_purchase.php">
+                                    <input hidden name="id" value="<?php echo $_SESSION['id']; ?>">
+                                    <input hidden name="username" value="<?php echo $_SESSION['username']; ?>">
+                                    <input hidden name="email" value="<?php echo $_SESSION['email']; ?>">
+                                    <input hidden name="car_id" value="<?php echo 1; ?>">
+                                    
+                                    <button type="submit" name="buy_car" class="btn btn-primary">Buy Now</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -417,13 +421,9 @@ $db = new Database($config);
 
     <!-- testimonial section start  -->
     <section id="testimonial" class=" position-relative">
-        <div class="pattern-overlay pattern-left position-absolute">
-<<<<<<< HEAD
-            <img src="images/testimonial-pattern.png" alt="pattern">
-=======
-            <img src="../images/testimonial-pattern.png" alt="pattern">
->>>>>>> origin/master
-        </div>
+    <div class="pattern-overlay pattern-right position-absolute">
+        <img src="../images/testimonial-pattern.png" alt="pattern" class="img-fluid" style="max-width: 70%;">
+    </div>
         <div class="container my-5 py-5">
             <div class="swiper testimonial-swiper">
                 <div class="swiper-wrapper">
@@ -431,42 +431,11 @@ $db = new Database($config);
                     <div class="swiper-slide text-center">
                         <div class="offset-2 col-8">
                             <iconify-icon icon="mdi:format-quote-open" class="testimonial-icon"></iconify-icon>
-                            <p class="testimonial-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.The more content you provide about you. Quos saepe suscipit, nemo dolore sapiente!
+                            <p class="testimonial-paragraph">Coming together is a beginning. Keeping together is progress. Working together is success
                             </p>
-                            <h5>James Rodrigo</h5>
+                            <h5>Herny Ford</h5>
                         </div>
                     </div>
-                    <div class="swiper-slide text-center">
-                        <div class="offset-2 col-8">
-                            <iconify-icon icon="mdi:format-quote-open" class="testimonial-icon"></iconify-icon>
-                            <p class="testimonial-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.The more content you provide about you. Quos saepe suscipit, nemo dolore sapiente!
-                            </p>
-                            <h5>James Rodrigo</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide text-center">
-                        <div class="offset-2 col-8">
-                            <iconify-icon icon="mdi:format-quote-open" class="testimonial-icon"></iconify-icon>
-                            <p class="testimonial-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.The more content you provide about you. Quos saepe suscipit, nemo dolore sapiente!
-                            </p>
-                            <h5>James Rodrigo</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide text-center">
-                        <div class="offset-2 col-8">
-                            <iconify-icon icon="mdi:format-quote-open" class="testimonial-icon"></iconify-icon>
-                            <p class="testimonial-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.The more content you provide about you. Quos saepe suscipit, nemo dolore sapiente!
-                            </p>
-                            <h5>James Rodrigo</h5>
-                        </div>
-                    </div>
-
-
-
                 </div>
                 <div class="swiper-pagination position-unset mt-4"></div>
             </div>
@@ -484,7 +453,7 @@ $db = new Database($config);
             <div class="row py-5 ">
                 <div class="  pt-3 col-10 col-sm-8 col-lg-5">
                     <h2 class="">Our <span class="text-primary">Recent Posts</span> </h2>
-                    <a href="blog.html" class="btn btn-primary mt-4">Read Blogs </a>
+                    <a href="#" class="btn btn-primary mt-4">Read Blogs </a>
 
 
                 </div>
@@ -495,7 +464,7 @@ $db = new Database($config);
                         </div>
                         <div class="ms-5">
                             <p>Tips</p>
-                            <a href="single-post.html" class="blog-title">Safest car rental services in 2023</a>
+                            <a href="#" class="blog-title">2 door? less whores</a>
                         </div>
                     </div>
                     <hr>
@@ -504,8 +473,8 @@ $db = new Database($config);
                             <h3>Jan 5<br> 2023</h3>
                         </div>
                         <div class="ms-5">
-                            <p>Rental</p>
-                            <a href="single-post.html" class="blog-title">Best car collection in the world</a>
+                            <p>Best car of the year</p>
+                            <a href="#" class="blog-title">Audi RS3 is one of the fastest........ read more</a>
                         </div>
                     </div>
                     <hr>
@@ -515,7 +484,7 @@ $db = new Database($config);
                         </div>
                         <div class="ms-5">
                             <p>Tricks</p>
-                            <a href="single-post.html" class="blog-title">Which car is the best for travel</a>
+                            <a href="#" class="blog-title">1-2-3-4-5- R is for racing mode!</a>
                         </div>
                     </div>
                     <hr>
@@ -530,13 +499,9 @@ $db = new Database($config);
     <!-- call-to-action section start  -->
     <section id="action" class="position-relative">
 
-        <div class="pattern-overlay pattern-right position-absolute">
-<<<<<<< HEAD
-            <img src="images/call-to-action-pattern.png" alt="pattern">
-=======
-            <img src="../images/call-to-action-pattern.png" alt="pattern">
->>>>>>> origin/master
-        </div>
+    <div class="pattern-overlay pattern-right position-absolute">
+        <img src="../images/call-to-action-pattern.png" alt="pattern" class="img-fluid" style="max-width: 70%;">
+    </div>
 
         <div class="container  py-5 my-5">
             <div class="row py-5 ">
@@ -544,9 +509,8 @@ $db = new Database($config);
                     <h2 class="">Let’s begin with <span class="text-primary">CARZILLA</span> </h2>
                 </div>
                 <div class=" col-lg-6">
-                    <p>Neque, vestibulum sed varius magna et at. Eu, adipiscing morbi augue justo. Nibh laoreet volutpat
-                        quis velit. Blandit aliquam donec sed morbi congue eget lorem viverra porta id lobortis.</p>
-                    <a href="contact.html" class="btn btn-primary mt-2">Contact us </a>
+                    <p>We're more than just a destination to buy cars and motorcycles; we're your gateway to automotive dreams. Born from a passion for exceptional vehicles, CARZILLA stands as a beacon for enthusiasts and everyday drivers alike. Our commitment extends beyond transactions; we're here to ignite your automotive journey with unparalleled selection, expert guidance, and a seamless purchasing experience. With CARZILLA, discover more than just vehicles; embrace a community united by a love for the road and the thrill of the ride. Welcome to CARZILLA, where your automotive aspirations roar to life.</p>
+                    <a href="#" class="btn btn-primary mt-2">Contact us at CARZILLA@cza.nl</a>
                 </div>
             </div>
 
@@ -560,9 +524,8 @@ $db = new Database($config);
             <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
 
                 <div class=" col-md-4 mt-5 mt-md-0 ">
-                    <img src="#" alt="image">
-                    <p class="py-3">Vel non nibh vestibulum massa ullam corper bib endum ultrices venenatis, id id sed
-                        mass.</p>
+                    <img src="../images/process-line.png" alt="image">
+                    <p class="py-3">Follow us on social media for our newest arrivals!</p>
                     <div class="d-flex align-items-center ">
                         <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
                                 icon="mdi:facebook"></iconify-icon></a>
@@ -591,9 +554,6 @@ $db = new Database($config);
                         </li>
                         <li class="nav-item me-2 mb-3">
                             <a class="nav-link px-4" href="#">Cars</a>
-                        </li>
-                        <li class="nav-item me-2 mb-3">
-                            <a class="nav-link px-4" href="#">Services</a>
                         </li>
                         <li class="nav-item me-2 mb-3">
                             <a class="nav-link px-4" href="#">Contact</a>
