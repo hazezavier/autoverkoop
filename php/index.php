@@ -65,8 +65,8 @@ $resultKilometers = $db->query($queryKilometers);
     .boba{
         display: flex;
         justify-content: center;
-        width: 90%;
-        height: Auto;
+        /* width: 90%; */
+        height: 530px;
     }
     
     .search-icon-position {
@@ -79,7 +79,7 @@ $resultKilometers = $db->query($queryKilometers);
 
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0" style="background-image: url('../images/MicrosoftTeams-image.png'); background-size: cover; background-position: center;">
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0" style="background-image: url('../images/MicrosoftTeams-images.png'); background-size: cover; background-position: center;">
 
 <nav class="navbar navbar-expand-lg navbar-light container-fluid py-3">
     <div class="container">
@@ -161,6 +161,7 @@ $resultKilometers = $db->query($queryKilometers);
 <section id="search">
     <div class="container search-block p-5">
         <form class="row" method="post" action="handle_search.php">
+        <input hidden name="car_id" value="<?php echo 1; ?>">
             <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
                 <label for="brand" class="label-style text-capitalize form-label">Brand</label>
                 <div class="input-group date">
@@ -329,14 +330,12 @@ $resultKilometers = $db->query($queryKilometers);
                                     ?> 
                                     <span class="rental-price"></span>
                                 </h3>
-                                <form method="post" action="process_purchase.php">
-                                    <input hidden name="id" value="<?php echo $_SESSION['id']; ?>">
-                                    <input hidden name="username" value="<?php echo $_SESSION['username']; ?>">
-                                    <input hidden name="email" value="<?php echo $_SESSION['email']; ?>">
+                                <form method="post" action="handle_ad.php">
                                     <input hidden name="car_id" value="<?php echo 1; ?>">
                                     
-                                    <button type="submit" name="buy_car" class="btn btn-primary">Buy Now</button>
+                                    <a href="advertisement.php"> <button type="submit" name="buy_car" class="btn btn-primary">Go to</button> </a>
                                 </form>
+                                
                             </div>
                         </div>
                     </div>
@@ -349,7 +348,7 @@ $resultKilometers = $db->query($queryKilometers);
                         <div class="boba">
                             <?php 
                                 $t = new Image();
-                                $t->getImage($db, 3);
+                                $t->getImage($db, 2);
                             ?>
                         </div>
                     
@@ -376,19 +375,58 @@ $resultKilometers = $db->query($queryKilometers);
                                     ?> 
                                     <span class="rental-price"></span>
                                 </h3>
-                                <form method="post" action="process_purchase.php">
-                                    <input hidden name="id" value="<?php echo $_SESSION['id']; ?>">
-                                    <input hidden name="username" value="<?php echo $_SESSION['username']; ?>">
-                                    <input hidden name="email" value="<?php echo $_SESSION['email']; ?>">
-                                    <input hidden name="car_id" value="<?php echo 1; ?>">
+                                <form method="post" action="handle_ad.php">
+                                    <input hidden name="car_id" value="<?php echo 2; ?>">
                                     
-                                    <button type="submit" name="buy_car" class="btn btn-primary">Buy Now</button>
+                                    <a href="advertisement.php"> <button type="submit" name="buy_car" class="btn btn-primary">Go to</button> </a>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- End Additional Slides -->
+
+                <div class="swiper-slide noSwiping">
+                    <div class="card">
+                        <div class="boba">
+                            <?php 
+                                $t = new Image();
+                                $t->getImage($db, 3);
+                            ?>
+                        </div>
+                    
+                        <div class="card-body p-4">
+                            <h4 class="card-title">
+                                <?php 
+                                    $car = Car::brandCarInfo($db, 3);
+                                ?>
+                            </h4>
+                            <div class="card-text">
+                                <ul class="d-flex list-unstyled">
+                                <?php
+                                    $car = Car::shortCarInfo($db, 3);
+                                ?>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <h3 class="pt-2">
+                                    <?php
+                                        echo "€";
+                                        $car = Car::priceCarInfo($db, 3);
+                                        echo ",-";
+                                    ?> 
+                                    <span class="rental-price"></span>
+                                </h3>
+                                <form method="post" action="handle_ad.php">
+                                    <input hidden name="car_id" value="<?php echo 3; ?>">
+                                    
+                                    <a href="advertisement.php"> <button type="submit" name="buy_car" class="btn btn-primary">Go to</button> </a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Add more slides here as needed -->
 
@@ -410,9 +448,9 @@ $resultKilometers = $db->query($queryKilometers);
 
     <!-- testimonial section start  -->
     <section id="testimonial" class=" position-relative">
-    <div class="pattern-overlay pattern-right position-absolute">
+    <!-- <div class="pattern-overlay pattern-right position-absolute">
         <img src="../images/testimonial-pattern.png" alt="pattern" class="img-fluid" style="max-width: 70%;">
-    </div>
+    </div> -->
         <div class="container my-5 py-5">
             <div class="swiper testimonial-swiper">
                 <div class="swiper-wrapper">
@@ -488,9 +526,9 @@ $resultKilometers = $db->query($queryKilometers);
     <!-- call-to-action section start  -->
     <section id="action" class="position-relative">
 
-    <div class="pattern-overlay pattern-right position-absolute">
+    <!-- <div class="pattern-overlay pattern-right position-absolute">
         <img src="../images/call-to-action-pattern.png" alt="pattern" class="img-fluid" style="max-width: 70%;">
-    </div>
+    </div> -->
 
         <div class="container  py-5 my-5">
             <div class="row py-5 ">
@@ -499,7 +537,7 @@ $resultKilometers = $db->query($queryKilometers);
                 </div>
                 <div class=" col-lg-6">
                     <p>We're more than just a destination to buy cars and motorcycles; we're your gateway to automotive dreams. Born from a passion for exceptional vehicles, CARZILLA stands as a beacon for enthusiasts and everyday drivers alike. Our commitment extends beyond transactions; we're here to ignite your automotive journey with unparalleled selection, expert guidance, and a seamless purchasing experience. With CARZILLA, discover more than just vehicles; embrace a community united by a love for the road and the thrill of the ride. Welcome to CARZILLA, where your automotive aspirations roar to life.</p>
-                    <a href="#" class="btn btn-primary mt-2">Contact us at CARZILLA@cza.nl</a>
+                    <a href="mailto:CARZILLA@cza.nl" class="btn btn-primary mt-2">Contact us at CARZILLA@cza.nl</a>
                 </div>
             </div>
 

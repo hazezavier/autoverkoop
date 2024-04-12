@@ -8,6 +8,7 @@ try {
     $db = new Database($config);
 
     // Retrieve form data
+    $selectedCarId = $_POST['car_id'];
     $selectedBrand = $_POST['brand'];
     $selectedModel = $_POST['model'];
     $selectedYear = $_POST['year'];
@@ -31,7 +32,7 @@ try {
         // echo "<p>Model: " . $row['model'] . "</p>";
         // echo "<p>Build Year: " . $row['year'] . "</p>";
         // echo "<p>Kilometers: " . $row['kilometers'] . "</p>";
-        header('Location: advertisement.php');
+        header('Location: advertisement.php?car_id=' . $selectedCarId);
         exit();
     }
 } catch (PDOException $e) {

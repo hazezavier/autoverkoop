@@ -13,7 +13,9 @@ $config = require('config.php');
 
 $db = new Database($config);
 
-$carId = 1;
+if (isset($_GET['car_id'])) {
+    $carId = $_GET['car_id'];
+}
 
 ?>
 
@@ -57,11 +59,11 @@ $carId = 1;
     opacity: 0.7;
 }
 
-    .boba{
+.boba{
         display: flex;
         justify-content: center;
-        width: 90%;
-        height: Auto;
+        /* width: 90%; */
+        height: 530px;
     }
 
 
@@ -69,7 +71,7 @@ $carId = 1;
 </head>
 
 
-<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0" style="background-image: url('../images/MicrosoftTeams-images.png'); background-size: cover; background-position: center;">
 
 <nav class="navbar navbar-expand-lg navbar-light container-fluid py-3">
     <div class="container">
@@ -102,7 +104,7 @@ $carId = 1;
                             <a class="nav-link px-3" href="#action">Contact</a>
                         </li>
                         <li class="nav-item me-2 mb-3">
-                            <a class="nav-link px-4" href="logout.php">Logout</a>
+                        <a class="nav-link px-3 py-2 text-white" href="logout.php" style="background-color: #dc3545; border: 1px solid #dc3545; border-radius: 5px; display: inline-block;">Logout</a>
                         </li>
                         <li class="nav-item me-2 mb-3">
                             <?php
@@ -144,7 +146,7 @@ $carId = 1;
         <h1 style="color:#0d6efd;;" class="text-center my-5">CARZILLA</span></h1>
 
         <!-- Swiper -->
-        <div class="swiper-container" style="height: 750px; overflow: hidden;">
+        <div class="swiper-container" style="height: 1000px; overflow: hidden;">
             <div class="swiper-wrapper">
 
                 <!-- First Slide -->
@@ -198,10 +200,9 @@ $carId = 1;
     <div class="col-auto">
         <i class="fas fa-user"></i> <!-- Font Awesome user icon -->
     </div>
-    <div class="col">
-        <h2><?php $userNa = Seller::displaySeller($db, 11);?></h2>
-    </div>
+    
 </div>
+
                                         
 
                                     </div>
@@ -209,6 +210,11 @@ $carId = 1;
                                 </form>
                             </div>
                         </div>
+                    </div>
+                    <div class="col">
+                        <br>
+                        <h2>Seller information</h2>
+                        <p><?php $userNa = Seller::displaySeller($db, 11);?></p>
                     </div>
                 </div>
                 <!-- End First Slide -->
@@ -249,7 +255,7 @@ $carId = 1;
             <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
 
                 <div class=" col-md-4 mt-5 mt-md-0 ">
-                    <img src="#" alt="image">
+                    <img src="../images/process-line.png" alt="image">
                     <p class="py-3">Vel non nibh vestibulum massa ullam corper bib endum ultrices venenatis, id id sed
                         mass.</p>
                     <div class="d-flex align-items-center ">
