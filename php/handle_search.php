@@ -1,39 +1,36 @@
 <?php
-// Database credentials
-$hostname = 'localhost'; // Or your database host
-$username = 'root';
-$password = '';
-$database = 'carzilla';
+// Include the Database class
+require_once 'classes/dbconnectie.php';
 
-// Create connection
-$connection = mysqli_connect($hostname, $username, $password, $database);
+try {
+    // Create a new instance of the Database class
+    $config = require('config.php'); // Assuming $config is defined in the config.php file
+    $db = new Database($config);
 
-// Check connection
-if (!$connection) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+    // Retrieve form data
+    $selectedBrand = $_POST['brand'];
 
-// Retrieve form data
-$selectedBrand = $_POST['brand'];
+    // Construct SQL query to fetch data based on selected brand
+    $sql = "SELECT model, YEAR(registration_date) AS year, kilometers FROM car WHERE brand = :selectedBrand";
 
-// Construct SQL query to fetch data based on selected brand
-$sql = "SELECT model, YEAR(registration_date) AS year, kilometers FROM car WHERE brand = '$selectedBrand'";
-$result = mysqli_query($connection, $sql);
+    // Prepare the statement
+    $stmt = $db->connection->prepare($sql);
 
-// Check if query was successful
-if ($result) {
+    // Bind parameter values
+    $stmt->bindParam(':selectedBrand', $selectedBrand, PDO::PARAM_STR);
+
+    // Execute the statement
+    $stmt->execute();
+
     // Fetch and display the results
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         // Display each result
         echo "<p>Model: " . $row['model'] . "</p>";
         echo "<p>Build Year: " . $row['year'] . "</p>";
         echo "<p>Kilometers: " . $row['kilometers'] . "</p>";
     }
-} else {
-    // Query failed
-    echo "Error: " . mysqli_error($connection);
+} catch (PDOException $e) {
+    // Display error message
+    echo "Error: " . $e->getMessage();
 }
-
-// Close the database connection
-mysqli_close($connection);
 ?>

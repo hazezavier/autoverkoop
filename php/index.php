@@ -1,6 +1,5 @@
 <?php
 require_once 'auth.php';
-
 require("classes/dbconnectie.php");
 include("classes/car.php");
 include("classes/bike.php");
@@ -9,9 +8,20 @@ include("classes/image.php");
 requireLogin();
 
 $config = require('config.php');
-
 $db = new Database($config);
 
+// Retrieve data for dropdowns from the database
+$queryBrands = "SELECT DISTINCT brand FROM car";
+$resultBrands = $db->query($queryBrands);
+
+$queryModels = "SELECT DISTINCT model FROM car";
+$resultModels = $db->query($queryModels);
+
+$queryYears = "SELECT DISTINCT YEAR(registration_date) AS year FROM car";
+$resultYears = $db->query($queryYears);
+
+$queryKilometers = "SELECT DISTINCT kilometers FROM car";
+$resultKilometers = $db->query($queryKilometers);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,12 +68,18 @@ $db = new Database($config);
         width: 90%;
         height: Auto;
     }
+    
+    .search-icon-position {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
     </style>
 
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
+<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0" style="background-image: url('../images/MicrosoftTeams-image.png'); background-size: cover; background-position: center;">
 
 <nav class="navbar navbar-expand-lg navbar-light container-fluid py-3">
     <div class="container">
@@ -144,35 +160,6 @@ $db = new Database($config);
 <!-- search section start -->
 <section id="search">
     <div class="container search-block p-5">
-        <?php
-        // Database credentials
-        $hostname = 'localhost'; // Or your database host
-        $username = 'root';
-        $password = '';
-        $database = 'carzilla';
-
-        // Create connection
-        $connection = mysqli_connect($hostname, $username, $password, $database);
-
-        // Check connection
-        if (!$connection) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-
-        // Retrieve data for dropdowns from the database
-        $queryBrands = "SELECT DISTINCT brand FROM car";
-        $resultBrands = mysqli_query($connection, $queryBrands);
-
-        $queryModels = "SELECT DISTINCT model FROM car";
-        $resultModels = mysqli_query($connection, $queryModels);
-
-        $queryYears = "SELECT DISTINCT YEAR(registration_date) AS year FROM car";
-        $resultYears = mysqli_query($connection, $queryYears);
-
-        $queryKilometers = "SELECT DISTINCT kilometers FROM car";
-        $resultKilometers = mysqli_query($connection, $queryKilometers);
-        ?>
-
         <form class="row" method="post" action="handle_search.php">
             <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
                 <label for="brand" class="label-style text-capitalize form-label">Brand</label>
@@ -180,14 +167,14 @@ $db = new Database($config);
                     <select class="form-select form-control p-3" id="brand" name="brand" aria-label="Default select example" style="background-image: none;">
                         <option selected>Select Brand</option>
                         <?php
-                        while ($row = mysqli_fetch_assoc($resultBrands)) {
+                        while ($row = $resultBrands->fetch()) {
                             echo '<option value="' . $row['brand'] . '">' . $row['brand'] . '</option>';
                         }
                         ?>
                     </select>
-                    <span class="search-icon-position position-absolute p-3 ">
-                            <iconify-icon class="search-icons" icon="solar:bus-outline"></iconify-icon>
-                        </span>
+                    <span class="search-icon-position position-absolute p-3">
+                        <iconify-icon class="search-icons" icon="solar:bus-outline"></iconify-icon>
+                    </span>
                 </div>
             </div>
 
@@ -197,14 +184,14 @@ $db = new Database($config);
                     <select class="form-select form-control p-3" id="model" name="model" aria-label="Default select example" style="background-image: none;">
                         <option selected>Select Model</option>
                         <?php
-                        while ($row = mysqli_fetch_assoc($resultModels)) {
+                        while ($row = $resultModels->fetch()) {
                             echo '<option value="' . $row['model'] . '">' . $row['model'] . '</option>';
                         }
                         ?>
                     </select>
-                    <span class="search-icon-position position-absolute p-3 ">
-                            <iconify-icon class="search-icons" icon="solar:bus-outline"></iconify-icon>
-                        </span>
+                    <span class="search-icon-position position-absolute p-3">
+                        <iconify-icon class="search-icons" icon="solar:bus-outline"></iconify-icon>
+                    </span>
                 </div>
             </div>
 
@@ -214,16 +201,16 @@ $db = new Database($config);
                     <select class="form-select form-control p-3" id="registration_date" name="registration_date" aria-label="Default select example" style="background-image: none;">
                         <option selected>Select Build Year</option>
                         <?php
-                        while ($row = mysqli_fetch_assoc($resultYears)) {
+                        while ($row = $resultYears->fetch()) {
                             echo '<option value="' . $row['year'] . '">' . $row['year'] . '</option>';
                         }
                         ?>
                     </select>
                     <span class="input-group-append">
-                            <span class="search-icon-position position-absolute p-3">
-                                <iconify-icon class="search-icons" icon="solar:calendar-broken"></iconify-icon>
-                            </span>
+                        <span class="search-icon-position position-absolute p-3">
+                            <iconify-icon class="search-icons" icon="solar:calendar-broken"></iconify-icon>
                         </span>
+                    </span>
                 </div>
             </div>
 
@@ -233,16 +220,16 @@ $db = new Database($config);
                     <select class="form-select form-control p-3" id="kilometers" name="kilometers" aria-label="Default select example" style="background-image: none;">
                         <option selected>Select Kilometers</option>
                         <?php
-                        while ($row = mysqli_fetch_assoc($resultKilometers)) {
+                        while ($row = $resultKilometers->fetch()) {
                             echo '<option value="' . $row['kilometers'] . '">' . $row['kilometers'] . '</option>';
                         }
                         ?>
                     </select>
                     <span class="input-group-append">
-                            <span class="search-icon-position position-absolute p-3">
-                                <iconify-icon class="search-icons" icon="solar:calendar-broken"></iconify-icon>
-                            </span>
+                        <span class="search-icon-position position-absolute p-3">
+                            <iconify-icon class="search-icons" icon="solar:calendar-broken"></iconify-icon>
                         </span>
+                    </span>
                 </div>
             </div>
 
@@ -252,13 +239,15 @@ $db = new Database($config);
                 <button class="btn btn-primary " type="submit">Find your vehicle</button>
             </div>
         </form>
-
-        <?php
-        // Close the database connection
-        mysqli_close($connection);
-        ?>
     </div>
 </section>
+
+
+    </div>
+</section>
+
+
+
 
     
     <!-- process section start  -->
