@@ -49,12 +49,5 @@ class Buyer extends User {
             return "Error occurred during purchase: " . $e->getMessage();
         }
     }
-
-
-    
-
-
-
-
 }
 ?>
